@@ -54,7 +54,14 @@ export default function Cliente({ cliente }) {
                 <line x1="18.384" y1="14.373" x2="19" y2="7" />
                 <path d="M9 5v-1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
               </svg>          
-              <button type='submit' className='text-xs text-gray-100'>Eliminar</button>
+              <button type='submit' className='text-xs text-gray-100'
+                onClick={e => {
+                  const respuesta = confirm("¿Deseas eliminar este cliente?")
+                  if(!respuesta) {
+                    e.preventDefault()
+                  }
+                }}
+              >Eliminar</button>
             </div>
           </Form>
           
